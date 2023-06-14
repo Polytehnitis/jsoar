@@ -1,0 +1,174 @@
+define
+## experimental : This sould be tho only thing nessesary.
+    identifier sub entity,
+      value string;
+     owns atribute1 sub attribute,
+      value string;
+     owns atribute2 sub attribute,
+      value string;
+     owns atribute3 sub attribute,
+      value string;
+     owns atribute4 sub attribute,
+      value string;
+     owns atribute5 sub attribute,
+      value string;
+     owns atribute6 sub attribute,
+      value string;
+     owns atribute7 sub attribute,
+      value string;
+     owns atribute8 sub attribute,
+      value string;
+     owns atribute9 sub attribute,
+     owns value string;
+     owns atribute10 sub attribute,
+      value string;
+## end of experimental    
+
+  versions sub entity,
+     key system TEXT PRIMARY KEY,
+     has version_number value string;
+
+  persistent_variables sub entity,
+     key variable_id,
+     has variable_value,
+     variable_id sub attribute, value long,
+     variable_value sub attribute, value long;
+
+  symbols_type sub entity,
+     key s_id,
+     has symbol_type,
+     s_id sub attribute, value long,
+     symbol_type sub attribute, value long; 
+
+  symbols_integer sub entity,
+     key s_id,
+     has symbol_value,
+     s_id sub attribute, value long,
+     symbol_value sub attribute, value long;
+
+  symbols_float sub entity,
+     key s_id,
+     has symbol_value,
+     s_id sub attribute, value long,
+     symbol_value sub attribute, value double;
+
+  symbols_string sub entity,
+     key s_id,
+     has symbol_value,
+     s_id sub attribute, value long,
+     symbol_value sub attribute, value string; 
+
+   lti sub entity,
+     key lti_id,
+     has total_augmentations,
+     has activation_base_level,
+     has activations_total,
+     has activations_last,
+     has activations_first,
+     has activation_spread,
+     has activation_value,
+     has lti_augmentations,
+     lti_id sub attribute, value long,
+     total_augmentations, sub attribute,value long,
+     activation_base_level, sub attribute, value double,
+     activations_total, sub attribute, value double,
+     activations_last, sub attribute, value long,
+     activations_first, sub attribute, value long,
+     activation_spread, sub attribute, value double,
+     activation_value, sub attribute, value double
+     lti_augmentations, sub attribute, value long;  
+
+  activation_history sub entity,
+     key lti_id,
+     has t1,
+     has t2,
+     has t3,
+     has t4,
+     has t5,
+     has t6,
+     has t7,
+     has t8,
+     has t9,
+     has t10,
+     has touch1,
+     has touch2,
+     has touch3,
+     has touch4,
+     has touch5,
+     has touch6,
+     has touch7,
+     has touch8,
+     has touch9,
+     has touch10,
+     t1 sub attribute, value long,
+     t2 sub attribute, value long,
+     t3 sub attribute, value long,
+     t4 sub attribute, value long,
+     t5 sub attribute, value long,
+     t6 sub attribute, value long,
+     t7 sub attribute, value long,
+     t8 sub attribute, value long,
+     t9 sub attribute, value long,
+     t10 sub attribute, value long,
+     touch1 sub attribute, value double,
+     touch2 sub attribute, value double,
+     touch3 sub attribute, value double,
+     touch4 sub attribute, value double,
+     touch5 sub attribute, value double,
+     touch6 sub attribute, value double,
+     touch7 sub attribute, value double,
+     touch8 sub attribute, value double,
+     touch9 sub attribute, value double,
+     touch10 sub attribute, value double;  
+
+  augmentations sub entity,
+     has lti_id,
+     has attribute_s_id,
+     has value_constant_s_id,
+     has value_lti_id,
+     has activation_value,
+     has edge_weight,
+     lti_id sub attribute, value long,
+     attribute_s_id sub attribute, value long,
+     value_constant_s_id sub attribute, value long,
+     value_lti_id sub attribute, value long,
+     activation_value sub attribute, value double,
+     edge_weight sub attribute, value double;  
+
+  attribute_frequency sub entity,
+     key attribute_s_id,
+     has edge_frequency,
+     attribute_s_id sub attribute, value long,
+     edge_frequency sub attribute, value long;
+
+  wmes_constant_frequency sub entity,
+     has attribute_s_id,
+     has value_constant_s_id,
+     has edge_frequency,
+     attribute_s_id sub attribute, value long,
+     value_constant_s_id sub attribute, value long,
+     edge_frequency sub attribute, value long; 
+
+  wmes_lti_frequency sub entity,
+     has attribute_s_id,
+     has value_lti_id,
+     has edge_frequency,
+     attribute_s_id sub attribute, value long,
+     value_lti_id sub attribute, value long,
+     edge_frequency sub attribute, value long; 
+
+
+## adding an ascii table just to make lti queries easier when inspecting database
+## need to figure out how to do the table
+
+  ascii sub entity,
+     key ascii_num,
+     has ascii_chr,
+     ascii_num sub attribute, value long,
+     ascii_chr sub attribute, value string;
+
+
+## semantic_memory.cpp:statement_container::create_indices()   
+## No idea how to do these
+
+  
