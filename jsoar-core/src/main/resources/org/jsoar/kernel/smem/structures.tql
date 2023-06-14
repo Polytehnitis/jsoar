@@ -24,6 +24,8 @@ define
       value string;
 ## end of experimental    
 
+
+## everything with key is wrong!!! still working on it
   versions sub entity,
      key system TEXT PRIMARY KEY,
      has version_number value string;

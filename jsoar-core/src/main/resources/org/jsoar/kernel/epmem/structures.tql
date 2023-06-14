@@ -1,0 +1,10 @@
+
+
+persistent_variables sub entity,
+     key variable_id,
+     has variable_value,
+     variable_id sub attribute, value long,
+     variable_value sub attribute, value long;
+
+
+## work in progress...
