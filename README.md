@@ -12,6 +12,8 @@
 
 ![Maven Build](https://github.com/soartech/jsoar/workflows/Maven%20Build/badge.svg)
 
+I have added Soarschema.tql as well as EpMem.jpg and SMem.jpg in the hopes that someone will help in making JSoar use TypeDB as its database instead of SQLite.
+
 JSoar is a pure Java implementation of the Soar kernel. See the [JSoar Wiki](https://github.com/soartech/jsoar/wiki) for more information. The [User's Guide](https://github.com/soartech/jsoar/wiki/JSoarUsersGuide) is a good place to start.
 
 ## Obtaining JSoar ##
