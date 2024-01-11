@@ -1,0 +1,256 @@
+define
+
+smem_ activation_history sub entity,
+owns lti_id @key,
+owns t1 value long,
+owns t2 value long,
+owns t3 value long,
+owns t4 value long,
+owns t5 value long,
+owns t6 value long,
+owns t7 value long,
+owns t8 value long,
+owns t9 value long,
+owns t10 value long,
+owns touch1 value double,
+owns touch2 value double,
+owns touch3 value double,
+owns touch4 value double,
+owns touch5 value double,
+owns touch6 value double,
+owns touch7 value double,
+owns touch8 value double,
+owns touch9 value double,
+owns touch10 value double;
+
+smem_acii sub entity,
+owns ascii_num @key,
+owns ascii_chr value string;
+
+smem_attribute_frequency sub entity,
+owns attribute_s_id @key,
+owns edge_frequency value long;
+
+smem_augmentations sub entity,
+owns lti_id value long,
+owns attribute_s value long,
+owns value_constant_s_id value long,
+owns value_lti_id value long,
+owns activation_value value double,
+owns edge_weight value double;
+
+smem_commited_spread sub entity,
+owns lti_id value long,
+owns num_appearances_i_j value double,
+owns lti_source value long,
+owns primarykey @key;  # (lti_source, lti_id)) without ROWID
+
+smem_constants_store sub entity,
+owns smem_act_max value double,
+owns smem_act_low value double;
+
+smem_current_spread sub entity,
+owns iti_id value long,
+owns num_appearances_i_j value double,
+owns num_appearances value double,
+owns lti_source value long,
+owns sign value long,
+owns @key;  # (lti_source, iti_id)) without ROWID
+
+smem_current_spread_activations sub entity,
+owns lti_id @key
+owns activation_base_level value double,
+owns activation_spread value double,
+owns activations_last value long,
+owns activations_first value long,
+owns activation_spread value double,
+owns activation_value value double,
+owns lti_augmentations value long;
+
+smem_invalid_parents sub entity,
+owns lti_id @key; # without ROWID
+
+smem_likelihood_trajectories sub entity,
+owns lti_id value long,
+owns lti1 value long,
+owns lti2 value long,	
+owns lti3 value long,
+owns lti4 value long,
+owns lti5 value long,
+owns lti6 value long,
+owns lti7 value long,
+owns lti8 value long,
+owns lti9 value long,
+owns lti10 value long,
+owns valid_bits value long;
+
+smem_likelihoods sub entity,
+owns lti_j value long,
+owns lti_i value long,
+owns num_appearances_i_j value double,
+owns @key;  # (lti_i, lti_j)) without ROWID
+
+smem_lti sub entity,
+owns lti_id @key,
+owns total_augmentations value long,
+owns activation_base_level value double,
+owns activations_total value double,
+owns activations_last value long,
+owns activations_first value long,
+owns activation_spread value double,	
+owns activation_value value double,
+owns lti_augmentations value long;
+
+smem_presistent_variables sub entity,
+owns variable_id @key,
+owns variable_value value long;
+
+smem_prohibited sub entity,
+owns lti_id @key,
+owns prohibited value long,
+owns dirty value long;
+
+smem_symbols_float sub entity,
+owns s_id @key,
+owns symbol_value value double;
+
+smem_symbols_integer sub entity,
+owns s_id @key,
+owns symbol_value value long;
+
+smem_symbols_string sub entity,
+owns s_id @key,
+owns symbol_value value string;
+
+smem_symbols_type sub entity,	
+owns s_id @key,
+owns symbol_type value long;
+
+smem_to_delete sub entity,
+owns lti_id @key;
+
+smem_trajectory_num sub entity,
+owns lti_id @key,
+owns num_appearances value double;
+
+
+smem_uncommitted_spread sub entity,
+owns lti_id value long,
+owns num_appearances_i_j value double;
+owns num_appearances value double,
+owns lti_source value long,
+owns sign value long;
+owns @key;  # (lti_source, lti_id)) without ROWID
+
+smem_wmes_constant_frequency sub entity,
+owns attribute_s_id value long,
+owns value_constant_s_id value long,
+owns edge_frequency value long;
+
+smem_wmes_lti_frequency sub entity,
+owns attribute_s_id value long,
+owns value_lti_id value long,
+owns edge_frequency value long;
+
+versions sub entity,
+owns system @key,
+owns version_number value string;
+
+
+epmem_ascii sub entity,
+owns ascii_num @key,
+owns ascii_chr value string;
+
+epmem_episodes sub entity,
+owns episode_id @key,
+
+epmem_nodes sub entity,
+owns n_id @key,
+owns lti_id value long;
+
+epmem_persistent_variables sub entity,
+owns variable_id @key,
+owns variable_value value string; # value NONE
+
+epmem_rit_left_nodes sub entity,
+owns rit_min value long,
+owns rit_max value long;
+
+epmem_rit_right_nodes sub entity,
+owns rit_id value long;
+
+epmem_symbols_float sub entity,
+owns s_id @key,
+owns symbol_value value double;
+
+epmem_symbols_integer sub entity,
+owns s_id @key,
+owns symbol_value value long;
+
+epmem_symbols_string sub entity,	
+owns s_id @key,
+owns symbol_value value string;
+
+epmem_symbols_type sub entity,
+owns s_id @key,
+owns symbol_type value long;
+
+epmem_wmes_constant sub entity,
+owns wc_id @key,                              #Autoincrement
+owns parent_n_id value long,
+owns attribute_s_id value long,
+owns value_s_id value long;
+
+epmem_wmes_constant_nows sub entity,
+owns wc_id @key,                              
+owns start_episode_id value long;
+
+epmem_wmes_constant_point sub entity,
+owns wc_id @key,
+owns episode_id value long;
+
+epmem_wmes_constant_range sub entity,
+owns rit_id value long;
+owns start_episode_id value long,
+owns end_episode_id value long;
+owns wc_id value long;
+
+epmem_wmes_identifier sub entity,
+owns wi_id @key,                                 #Autoincrement
+owns parent_n_id value long,
+owns attribute_s_id value long,
+owns child_n_id value long,
+owns last_episode_id value long;
+
+epmem_wmes_identifier_now sub entity,
+owns wi_id @key,
+owns start_episode_id value long;
+owns lti_id value long;
+
+epmem_wmes_identifier_point sub entity,
+owns wi_id value long,
+owns episode_id value long,
+owns lti_id value long;
+
+epmem_wmes_identifier_range sub entity,
+owns rit_id value long,
+owns start_episode_id value long,
+owns end_episode_id value long,
+owns wi_id value long,
+owns lti_id value long;
+
+sqlite_sequence sub entity,
+owns name value string,
+owns seq value string;
+
+versions sub entity,
+owns system @key,
+owns version_number value string;
+
+
+
+
+
+
+
+
