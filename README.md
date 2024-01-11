@@ -12,7 +12,7 @@
 
 ![Maven Build](https://github.com/soartech/jsoar/workflows/Maven%20Build/badge.svg)
 
-I have added Soarschema.tql as well as EpMem.jpg and SMem.jpg in the hopes that someone will help in making JSoar use TypeDB as its database instead of SQLite.
+I have added SoarSchema.tql as well as EpMem.jpg and SMem.jpg in the hopes that someone will help in making JSoar use TypeDB as its database instead of SQLite.
 -
 -
 -
